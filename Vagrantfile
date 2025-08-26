@@ -3,8 +3,9 @@ Vagrant.configure("2") do |config|
   
   # 🔧 Configurações de Rede para Spring Boot
   config.vm.network "forwarded_port", guest: 8080, host: 8080   # Spring Boot
-  config.vm.network "forwarded_port", guest: 9090, host: 9090   # Admin/Actuator
   config.vm.network "forwarded_port", guest: 5005, host: 5005   # Debug Java
+  config.vm.network "forwarded_port", guest: 9092, host: 9092   # Bff Projects
+  config.vm.network "forwarded_port", guest: 9090, host: 9090   # Admin/Actuator
   
   # 📁 Sincronização de pasta (Spring Boot project)
   config.vm.synced_folder "./shared", "/vagrant", type: "rsync",
