@@ -1,7 +1,7 @@
 #!/bin/bash
 # start-springboot.sh - Inicia aplicação Spring Boot
 
-cd /home/vagrant/java-project
+cd /vagrant/project
 
 # Verificar se é Maven ou Gradle
 if [ -f "pom.xml" ]; then

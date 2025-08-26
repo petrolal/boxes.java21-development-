@@ -1,7 +1,7 @@
 #!/bin/bash
 # debug-springboot.sh - Debug Spring Boot
 
-cd /home/vagrant/java-project
+cd /vagrant/project
 
 if [ -f "pom.xml" ]; then
   ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
