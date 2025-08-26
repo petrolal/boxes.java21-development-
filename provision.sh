@@ -3,7 +3,9 @@
 
 set -e
 
-echo "🔧 Configurando ambiente Java 21..."
+print_status() { echo -e "\033[0;32m[INFO]\033[0m $1"; }
+
+print_status "[provision] 🔧 Configurando ambiente Java 21..."
 
 # Instalar Java 21 from official repository
 sudo apt-get update -y
@@ -13,6 +15,7 @@ sudo apt-get update -y
 sudo apt-get install -y openjdk-21-jdk
 
 # Instalar build tools
+print_status "[provision] 🔧 Instalando Maven e gradle..."
 sudo apt-get install -y maven gradle
 
 # Configurar environment
@@ -21,6 +24,7 @@ echo "export PATH=\$JAVA_HOME/bin:\$PATH" >>~/.bashrc
 source ~/.bashrc
 
 # Instalar ferramentas de desenvolvimento
+print_status "[provision] 🔧 Instalando Ferramentas de desenvolvimento..."
 sudo apt-get install -y \
   git \
   curl \
@@ -30,11 +34,11 @@ sudo apt-get install -y \
   htop
 
 # Verificar instalações
-echo "✅ Java instalado:"
+print_status "[provision] ✅ Java instalado:"
 java -version
-echo "✅ Maven:"
+print_status "[provision] ✅ Maven:"
 mvn --version
-echo "✅ Gradle:"
+print_status "[provision]✅ Gradle:"
 gradle --version
 
-echo "🎉 Ambiente Java pronto!"
+print_status "[provision]🎉 Ambiente Java pronto!"
