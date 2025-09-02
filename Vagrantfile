@@ -1,6 +1,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2204"  # Ubuntu 22.04 LTS (com suporte a Java 21)
-  
+ 
+  config.vm.network "public_network", :dev => "wlan0"
+
   # 🔧 Configurações de Rede para Spring Boot
   config.vm.network "forwarded_port", guest: 8080, host: 8080   # Spring Boot
   config.vm.network "forwarded_port", guest: 5005, host: 5005   # Debug Java

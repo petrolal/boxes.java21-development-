@@ -10,7 +10,7 @@ print_status "[provision] 🔧 Configurando ambiente Java 21..."
 # Instalar Java 21 from official repository
 sudo apt-get update -y
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:openjdk-r/ppa
+sudo add-apt-repository -y ppa:linuxuprising/java
 sudo apt-get update -y
 sudo apt-get install -y openjdk-21-jdk
 
